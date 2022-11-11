@@ -1,29 +1,8 @@
-import telebot
-import datetime
-from datetime import datetime
-bot = telebot.TeleBot('TOKEN')
+import bot_commands as bc
 
-now = datetime.now()
+bc.bot.polling(none_stop=True, interval=0)
 
 
-@bot.message_handler(content_types=['text'])
-def get_text_messages(message):
-    if message.text == "Привет":
-        bot.send_message(message.from_user.id,"Привет, чем я могу тебе помочь?")
-    elif message.text == "/help":
-        bot.send_message(
-            message.from_user.id, "Я могу помочь тебе.\n- Если хочешь задать вопрос, напиши 'Привет'\n\
-                - Если хочешь узнать, сколько сейчас время, напиши 'Время'\n\
-                - Если хочешь узнать, какая сегодня дата, напиши 'Дата'")
-    elif message.text == "Время":
-        bot.send_message(message.from_user.id, {now.strftime("%H:%M:%S")})
-    elif message.text == "Дата":
-        bot.send_message(message.from_user.id, {now.strftime("%Y-%m-%d")})
-    else:
-        bot.send_message(message.from_user.id, "Я тебя не понимаю. Напиши /help.")
-
-
-bot.polling(none_stop=True, interval=0)
 
 
 # from telegram import Update
