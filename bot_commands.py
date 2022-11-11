@@ -1,4 +1,5 @@
 import telebot
+import model as mod
 import datetime
 from datetime import datetime
 
@@ -20,6 +21,10 @@ def get_text_messages(message):
         bot.send_message(message.from_user.id, {now.strftime("%H:%M:%S")})
     elif message.text == "Дата":
         bot.send_message(message.from_user.id, {now.strftime("%Y-%m-%d")})
+    # elif message.text == "Фибо":
+    #     bot.send_message(message.from_user.id, "Введите число")
+    #     num = input()
+    #     bot.send_message(message.from_user.id, {mod.fib(num)})   
     else:
         bot.send_message(message.from_user.id, "Я тебя не понимаю. Напиши /help.")
 
