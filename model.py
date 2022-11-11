@@ -1,14 +1,14 @@
 # import bot_commands as bc
 
-# def fib(n):
-#     print('-' * 15)
-#     print(n)
-#     if n == 0:
-#         return 0
-#     if n in [1, 2]:
-#         return 1
+num = int(input())
+
+def summ():
+    print(sum(num))
+
+# def start(message):
+#     if message.text == '/reg':
+#         bot.send_message(message.from_user.id, "Как тебя зовут?")
+#         # следующий шаг – функция get_name
+#         bot.register_next_step_handler(message, get_name)
 #     else:
-#         return fib(n-1) + fib(n-2)
-
-
-# print(fib(bc.get_text_messages.num))
+#         bot.send_message(message.from_user.id, 'Напиши /reg')
